@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', get_secret('SECRET_KEY'))
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['0.0.0.0', '*']
 
 
 # Application definition
@@ -124,18 +124,18 @@ WSGI_APPLICATION = 'myapi.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, get_secret('DATABASE_NAME')),
-    },
-	# 'default' : {
-	# 	'ENGINE' : 'django.db.backends.postgresql',
-	# 	'NAME' : '',
-	# 	'USER' : '',
-	# 	'PASSWORD' : '',
-	# 	'HOST' : '', # DB server 분리
-	# 	'PORT' : '5432'
-	# }
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, get_secret('DATABASE_NAME')),
+    # },
+	'default' : {
+		'ENGINE' : 'django.db.backends.postgresql',
+		'NAME' : 'board',
+		'USER' : 'boarduser',
+		'PASSWORD' : 'qwer1234',
+		'HOST' : 'db', # DB server 분리
+		'PORT' : '5432'
+	}
 }
 
 
